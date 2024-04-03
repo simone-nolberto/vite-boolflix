@@ -29,7 +29,7 @@ export default {
                 <li>Il titolo originale {{ film.original_title }}</li>
                 <li>La lingua originale è {{ film.original_language }}</li>
                 <li>Voto medio: {{ film.vote_average }}</li>
-                <Flag></Flag>
+                <Flag :film="film"></Flag>
             </ul>
         </span>
     </div>

@@ -10,17 +10,32 @@ export default {
 
         }
     },
+    props: ['film'],
     methods: {
         findCountry() {
-            if (film.original_language === 'en') {
-                this.flag = gb;
-                console.log(this.flag);
-            } else {
-                this.flag = film.original_language;
+
+
+            if (this.film.original_language === 'en') {
+                this.flag = 'https://flagcdn.com/w20/gb.png';
+                // console.log(this.flag);
+            } else if (this.film.original_language === 'ja')
+                this.flag = 'https://flagcdn.com/w20/jp.png';
+
+            else {
+                this.flag = `https://flagcdn.com/w20/${this.film.original_language}.png`;
+                // console.log(this.film.original_language)
             }
-        }
+
+            console.log(this.flag)
+        },
+
 
     },
+
+    mounted() {
+        this.findCountry()
+
+    }
 
 }
 </script>
@@ -28,8 +43,8 @@ export default {
 <template>
 
     <li>
-        <!-- <img src="https://flagcdn.com/w20/this.flag.png" width="20" alt="country"> -->
-        {{ this.flag }}
+        <img :src="this.flag" width="20" alt="country">
+
     </li>
 
 </template>

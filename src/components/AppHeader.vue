@@ -26,7 +26,7 @@ export default {
 
     <img src="" alt="">
 
-    <input @keyup="findFilm()" type="text" name="" id="" v-model="userInput">
+    <input type="text" name="" id="" v-model="userInput">
     <button @click="findFilm()">Cerca</button>
 
 </template>
