@@ -3,14 +3,14 @@ import axios from "axios";
 
 export const state = reactive({
     films: [],
-    apiUrl: 'https://api.themoviedb.org/3/search/movie?api_key=5abe208d1972a179b672737b5489a0cb&query=',
+    apiFilmUrl: 'https://api.themoviedb.org/3/search/movie?api_key=5abe208d1972a179b672737b5489a0cb&query=',
 
     getFilm (url){
         axios.get(url)
         .then(response => {
-            console.log(response.data.results);
+            // console.log(response.data.results);
             this.films = response.data.results;
-            console.log(this.films);
+            // console.log(this.films);
         })
     }
     

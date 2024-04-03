@@ -6,18 +6,17 @@ export default {
     data() {
         return {
             state,
-            userInput: '',  
-    }
+            userInput: '',
+        }
     },
-    methods:{
-        logInput(){
-            console.log(this.userInput);
+    methods: {
+
+        findFilm() {
+            // console.log(this.state.apiUrl + this.userInput );
+            this.state.getFilm(this.state.apiFilmUrl + this.userInput)
         },
 
-        findFilm(){
-            console.log(this.state.apiUrl + this.userInput );
-            this.state.getFilm(this.state.apiUrl + this.userInput)
-        }
+
 
     }
 }
