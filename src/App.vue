@@ -1,5 +1,6 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'Boolflix',
@@ -10,6 +11,7 @@ export default {
   },
   components: {
     AppHeader,
+    AppMain,
   }
 }
 
@@ -18,6 +20,7 @@ export default {
 <template>
 
   <AppHeader></AppHeader>
+  <AppMain></AppMain>
   
 </template>
 

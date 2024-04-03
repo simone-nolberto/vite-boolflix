@@ -8,7 +8,9 @@ export const state = reactive({
     getFilm (url){
         axios.get(url)
         .then(response => {
-            console.log(response.data);
+            console.log(response.data.results);
+            this.films = response.data.results;
+            console.log(this.films);
         })
     }
     
