@@ -16,7 +16,9 @@ export default {
             this.state.getFilm(this.state.apiFilmUrl + this.userInput)
         },
 
-
+        findSeries() {
+            this.state.getSeries(this.state.apiSeriesUrl + this.userInput)
+        }
 
     }
 }
@@ -27,7 +29,7 @@ export default {
     <img src="" alt="">
 
     <input type="text" name="" id="" v-model="userInput">
-    <button @click="findFilm()">Cerca</button>
+    <button @click="findFilm(); findSeries()">Cerca</button>
 
 </template>
 

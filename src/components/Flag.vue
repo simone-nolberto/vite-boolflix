@@ -26,7 +26,7 @@ export default {
                 // console.log(this.film.original_language)
             }
 
-            console.log(this.flag)
+            // console.log(this.flag)
         },
 
 
