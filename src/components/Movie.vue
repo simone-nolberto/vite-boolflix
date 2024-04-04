@@ -7,6 +7,7 @@ export default {
         return {
             state,
             imgLink: '',
+            vote: '',
         }
     },
     props: ['film'],
@@ -31,9 +32,11 @@ export default {
         },
 
         findFilmImg() {
-            console.log(this.film.poster_path);
+            // console.log(this.film.poster_path);
             this.imgLink = `https://image.tmdb.org/t/p/w342/${this.film.poster_path}`
-        }
+        },
+
+        
 
     },
 
@@ -47,19 +50,25 @@ export default {
 </script>
 
 <template>
-    <h3>Film:</h3>
-    <span v-for="film in this.state.films ">
-        <ul v-if="this.state.films.length > 0">
-            <img :src="this.imgLink" alt="">
-            <li>Il titolo è {{ film.title }}</li>
-            <li>Il titolo originale {{ film.original_title }}</li>
-            <li>La lingua originale è <img :src="this.state.movieFlag" width="20" :alt="this.film.original_language">
-            </li>
+    
+    <div class="col">
+        <div class="card">
+            <span>
+                <ul v-if="this.state.films.length > 0">
+                    <img :src="this.imgLink" alt="">
+                    <li>Il titolo è {{ film.title }}</li>
+                    <li>Il titolo originale {{ film.original_title }}</li>
+                    <li>La lingua originale è <img :src="this.state.movieFlag" width="20"
+                            :alt="this.film.original_language">
+                    </li>
 
-            <li>La lingua originale è {{ film.original_language }}</li>
-            <li>Voto medio: {{ film.vote_average }}</li>
-        </ul>
-    </span>
+                    <!-- <li>La lingua originale è {{ film.original_language }}</li> -->
+                    <li>Voto medio: {{ film.vote_average }}</li>
+                </ul>
+            </span>
+        </div>
+    </div>
+
 
 
 

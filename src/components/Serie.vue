@@ -28,7 +28,8 @@ export default {
         },
 
         findSerieImg() {
-            console.log(this.serie.poster_path);
+            
+            // console.log(this.serie.poster_path);
             this.imgLink = `https://image.tmdb.org/t/p/w342/${this.serie.poster_path}`
         }
 
@@ -45,18 +46,24 @@ export default {
 </script>
 
 <template>
-    <h3>Serie:</h3>
-    <span v-for="serie in this.state.tvSeries">
-        <ul v-if="this.state.tvSeries.length > 0">
-            <img :src="this.imgLink" alt="">
-            <li>Il titolo è {{ serie.original_name }}</li>
-            <li>Il titolo originale {{ serie.original_name }}</li>
-            <li>La lingua originale è <img :src="this.state.serieFlag" width="20" :alt="this.serie.original_language">
-            </li>
-            <li>La lingua originale è {{ serie.original_language }}</li>
-            <li>Voto medio: {{ serie.vote_average }}</li>
-        </ul>
-    </span>
+    
+    <div class="col" >
+        <div class="card" >
+            <span >
+                <ul v-if="this.state.tvSeries.length > 0">
+                    <img :src="imgLink" alt="">
+                    <li>Il titolo è {{ serie.original_name }}</li>
+                    <li>Il titolo originale {{ serie.original_name }}</li>
+                    <li>La lingua originale è <img :src="this.state.serieFlag" width="20"
+                            :alt="this.serie.original_language">
+                    </li>
+                    <!-- <li>La lingua originale è {{ serie.original_language }}</li> -->
+                    <li>Voto medio: {{ serie.vote_average }}</li>
+                </ul>
+            </span>
+
+        </div>
+    </div>
 
 
 </template>

@@ -1,16 +1,35 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-header{
+header {
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
 
-main{
+main {
     padding: 1.5rem;
+}
+
+
+.container {
+    width: 1200px;
+    margin: auto;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .col{
+        width: calc((100% / 12) * 3);
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5rem;
+    }
+
 }
