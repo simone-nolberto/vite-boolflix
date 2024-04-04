@@ -14,9 +14,7 @@ export default {
     methods: {
 
         findFilmLanguage() {
-            console.log(this.film);
-
-
+            
             if (this.film.original_language === 'en') {
                 this.state.movieFlag = 'https://flagcdn.com/w20/gb.png';
                 // console.log(this.flag);
@@ -36,6 +34,14 @@ export default {
             this.imgLink = `https://image.tmdb.org/t/p/w342/${this.film.poster_path}`
         },
 
+        setVote(){
+            // console.log(parseFloat(this.film.vote_average).toFixed(1));
+            // console.log(Math.round(this.film.vote_average));
+            // console.log(Math.round(this.film.vote_average/2));
+
+            this.vote = Math.round(this.film.vote_average/2) 
+            console.log(this.vote);
+        }
         
 
     },
@@ -43,6 +49,7 @@ export default {
     mounted() {
         this.findFilmLanguage();
         this.findFilmImg();
+        this.setVote();
 
     }
 
@@ -63,7 +70,8 @@ export default {
                     </li>
 
                     <!-- <li>La lingua originale è {{ film.original_language }}</li> -->
-                    <li>Voto medio: {{ film.vote_average }}</li>
+                    <!-- <li>Voto medio: {{this.vote}}</li> -->
+                    <li><i class="fa-solid fa-star"></i></li>
                 </ul>
             </span>
         </div>

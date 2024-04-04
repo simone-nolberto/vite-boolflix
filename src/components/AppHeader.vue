@@ -25,7 +25,15 @@ export default {
         },
 
         findSeries() {
-            this.state.getSeries(this.state.apiSeriesUrl + this.state.userInput)
+            if (this.state.tvSeries.length === 0) {
+                this.state.getSeries(this.state.apiSeriesUrl + this.state.userInput)
+            } else if (this.state.tvSeries.length > 0) {
+                this.state.tvSeries = 0,
+                    // this.userInput = ''
+                    this.state.getSeries(this.state.apiSeriesUrl + this.state.userInput)
+
+            }
+
         }
 
     }

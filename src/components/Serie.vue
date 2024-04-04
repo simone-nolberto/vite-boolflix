@@ -7,6 +7,7 @@ export default {
         return {
             state,
             imgLink: '',
+            vote: '',
         }
     },
     props: ['serie'],
@@ -31,6 +32,13 @@ export default {
             
             // console.log(this.serie.poster_path);
             this.imgLink = `https://image.tmdb.org/t/p/w342/${this.serie.poster_path}`
+        },
+
+        setVote(){
+            
+
+            this.vote = Math.round(this.serie.vote_average/2)
+            console.log(this.vote);
         }
 
 
@@ -40,6 +48,7 @@ export default {
 
         this.findSerieLanguage();
         this.findSerieImg();
+        this.setVote();
     }
 
 }
@@ -58,7 +67,8 @@ export default {
                             :alt="this.serie.original_language">
                     </li>
                     <!-- <li>La lingua originale è {{ serie.original_language }}</li> -->
-                    <li>Voto medio: {{ serie.vote_average }}</li>
+                    <!-- <li>Voto medio: {{ this.vote }}</li> -->
+                    <li><i class="fa-solid fa-star"></i></li>
                 </ul>
             </span>
 
