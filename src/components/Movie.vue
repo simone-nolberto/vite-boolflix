@@ -6,13 +6,14 @@ export default {
     data() {
         return {
             state,
-
+            imgLink: '',
         }
     },
     props: ['film'],
     methods: {
 
         findFilmLanguage() {
+            console.log(this.film);
 
 
             if (this.film.original_language === 'en') {
@@ -29,10 +30,16 @@ export default {
             // console.log(this.flag)
         },
 
+        findFilmImg() {
+            console.log(this.film.poster_path);
+            this.imgLink = `https://image.tmdb.org/t/p/w342/${this.film.poster_path}`
+        }
+
     },
 
     mounted() {
-        this.findFilmLanguage()
+        this.findFilmLanguage();
+        this.findFilmImg();
 
     }
 
@@ -43,11 +50,10 @@ export default {
     <h3>Film:</h3>
     <span v-for="film in this.state.films ">
         <ul v-if="this.state.films.length > 0">
-
+            <img :src="this.imgLink" alt="">
             <li>Il titolo è {{ film.title }}</li>
             <li>Il titolo originale {{ film.original_title }}</li>
-            <li>
-                La lingua originale è <img :src="this.state.movieFlag" width="20" :alt="this.film.original_language">
+            <li>La lingua originale è <img :src="this.state.movieFlag" width="20" :alt="this.film.original_language">
             </li>
 
             <li>La lingua originale è {{ film.original_language }}</li>

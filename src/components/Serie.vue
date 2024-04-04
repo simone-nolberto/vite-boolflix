@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             state,
-
+            imgLink: '',
         }
     },
     props: ['serie'],
@@ -25,6 +25,11 @@ export default {
                 this.serieFlag = `https://flagcdn.com/w20/${this.serie.original_language}.png`;
                 // console.log(this.film.original_language)
             }
+        },
+
+        findSerieImg() {
+            console.log(this.serie.poster_path);
+            this.imgLink = `https://image.tmdb.org/t/p/w342/${this.serie.poster_path}`
         }
 
 
@@ -32,7 +37,8 @@ export default {
 
     mounted() {
 
-        this.findSerieLanguage()
+        this.findSerieLanguage();
+        this.findSerieImg();
     }
 
 }
@@ -42,12 +48,10 @@ export default {
     <h3>Serie:</h3>
     <span v-for="serie in this.state.tvSeries">
         <ul v-if="this.state.tvSeries.length > 0">
-
+            <img :src="this.imgLink" alt="">
             <li>Il titolo è {{ serie.original_name }}</li>
             <li>Il titolo originale {{ serie.original_name }}</li>
-            <li>
-
-                La lingua originale è <img :src="this.state.serieFlag" width="20" :alt="this.serie.original_language">
+            <li>La lingua originale è <img :src="this.state.serieFlag" width="20" :alt="this.serie.original_language">
             </li>
             <li>La lingua originale è {{ serie.original_language }}</li>
             <li>Voto medio: {{ serie.vote_average }}</li>
