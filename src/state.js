@@ -19,8 +19,9 @@ export const state = reactive({
     getSeries(url){
         axios.get(url)
         .then(response => {
-            console.log(response);
-            // this.tvSeries = response.data
+            // console.log(response.data.results);
+            this.tvSeries = response.data.results;
+            // console.log(this.tvSeries);
         })
     }
     

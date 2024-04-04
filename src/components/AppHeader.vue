@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             state,
-        
+
         }
     },
     methods: {
@@ -18,14 +18,14 @@ export default {
 
             } else if (this.state.films.length > 0) {
                 this.state.films = 0,
-                // this.userInput = ''
-                this.state.getFilm(this.state.apiFilmUrl + this.state.userInput)
+                    // this.userInput = ''
+                    this.state.getFilm(this.state.apiFilmUrl + this.state.userInput)
 
             }
         },
 
         findSeries() {
-            this.state.getSeries(this.state.apiSeriesUrl + this.userInput)
+            this.state.getSeries(this.state.apiSeriesUrl + this.state.userInput)
         }
 
     }
@@ -33,11 +33,19 @@ export default {
 </script>
 
 <template>
+    <header>
+        <div class="logo">
 
-    <img src="" alt="">
+            <h1>BOOLFLIX</h1>
+        </div>
 
-    <input type="text" name="" id="" v-model="this.state.userInput">
-    <button @click="findFilm(); findSeries()">Cerca</button>
+        <div class="searchBar">
+
+            <input type="text" name="" id="" v-model="this.state.userInput">
+            <button @click="findFilm(); findSeries();">Cerca</button>
+        </div>
+    </header>
+
 
 </template>
 
