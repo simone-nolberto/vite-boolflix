@@ -7,7 +7,7 @@ export default {
         return {
             state,
             imgLink: '',
-            vote: '',
+            vote: 0,
         }
     },
     props: ['serie'],
@@ -29,16 +29,15 @@ export default {
         },
 
         findSerieImg() {
-            
+
             // console.log(this.serie.poster_path);
             this.imgLink = `https://image.tmdb.org/t/p/w342/${this.serie.poster_path}`
         },
 
-        setVote(){
-            
+        setVote(n) {
+            this.vote = n;
 
-            this.vote = Math.round(this.serie.vote_average/2)
-            console.log(this.vote);
+
         }
 
 
@@ -48,32 +47,35 @@ export default {
 
         this.findSerieLanguage();
         this.findSerieImg();
-        this.setVote();
+        this.setVote(Math.round(this.serie.vote_average / 2));
     }
 
 }
 </script>
 
 <template>
-    
-    <div class="col" >
-        <div class="card" >
-            <span >
-                <ul v-if="this.state.tvSeries.length > 0">
-                    <img :src="imgLink" alt="">
-                    <li>Il titolo è {{ serie.original_name }}</li>
-                    <li>Il titolo originale {{ serie.original_name }}</li>
-                    <li>La lingua originale è <img :src="this.state.serieFlag" width="20"
+
+    <div class="col">
+        <div class="card">
+            <div class="card-img">
+                <img :src="imgLink" alt="">
+            </div>
+            <div class="card-body" v-if="this.state.tvSeries.length > 0">
+
+                <ul>
+                    <li>Titolo: {{ serie.original_name }}</li>
+                    <li>Titolo originale: {{ serie.original_name }}</li>
+                    <li>Lingua originale: <img :src="this.state.serieFlag" width="20"
                             :alt="this.serie.original_language">
                     </li>
-                    <!-- <li>La lingua originale è {{ serie.original_language }}</li> -->
-                    <!-- <li>Voto medio: {{ this.vote }}</li> -->
-                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i></li>
                 </ul>
-            </span>
 
+            </div>
         </div>
     </div>
+
+
 
 
 </template>

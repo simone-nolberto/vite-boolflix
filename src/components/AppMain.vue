@@ -26,19 +26,21 @@ export default {
 <template>
     <main>
         <div class="container">
-            <div class="row">
-                <div v-if="this.state.films.length > 0">
-                    <h3>Film:</h3>
-                    <Movie v-for="film in this.state.films" :film='film'></Movie>
-                </div>
-                <div v-if="this.state.tvSeries.length > 0">
-                    <h3>Serie:</h3>
-                    <Serie v-for="serie in this.state.tvSeries" :serie="serie"></Serie>
+            <h3>Film:</h3>
+            <div class="row" v-if="this.state.films.length > 0">
 
-                </div>
+                
+                <Movie v-for="film in this.state.films" :film='film'></Movie>
+
 
             </div>
+            <h3>Serie:</h3>
+            <div class="row" v-if="this.state.tvSeries.length > 0">
 
+                
+                <Serie v-for="serie in this.state.tvSeries" :serie="serie"></Serie>
+
+            </div>
 
         </div>
 

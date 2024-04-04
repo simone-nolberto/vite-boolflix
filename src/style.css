@@ -20,16 +20,23 @@ main {
     width: 1200px;
     margin: auto;
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .col{
-        width: calc((100% / 12) * 3);
-        display: flex;
-        justify-content: center;
-        padding-bottom: 5rem;
-    }
 
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+
+}
+
+.col {
+    width: calc((100% / 12) * 4);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+& ul {
+    list-style: none;
 }
