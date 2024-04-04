@@ -2,7 +2,7 @@
 import { state } from '../state';
 
 export default {
-    name: 'MovieFlag',
+    name: 'Movie',
     data() {
         return {
             state,
@@ -11,6 +11,7 @@ export default {
     },
     props: ['film'],
     methods: {
+
         findFilmLanguage() {
 
 
@@ -39,11 +40,22 @@ export default {
 </script>
 
 <template>
+    <h3>Film:</h3>
+    <span v-for="film in this.state.films ">
+        <ul v-if="this.state.films.length > 0">
 
-    <li>
-        <span> La lingua originale è <img :src="this.state.movieFlag" width="20"
-                :alt="this.film.original_language"></span>
-    </li>
+            <li>Il titolo è {{ film.title }}</li>
+            <li>Il titolo originale {{ film.original_title }}</li>
+            <li>
+                La lingua originale è <img :src="this.state.movieFlag" width="20" :alt="this.film.original_language">
+            </li>
+
+            <li>La lingua originale è {{ film.original_language }}</li>
+            <li>Voto medio: {{ film.vote_average }}</li>
+        </ul>
+    </span>
+
+
 
 </template>
 

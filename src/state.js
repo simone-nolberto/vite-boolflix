@@ -25,6 +25,9 @@ export const state = reactive({
                 this.tvSeries = response.data.results;
                 // console.log(this.tvSeries);
             })
-    }
+    },
+
+
+
 
 })

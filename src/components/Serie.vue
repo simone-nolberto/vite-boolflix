@@ -2,7 +2,7 @@
 import { state } from '../state';
 
 export default {
-    name: 'SerieFlag',
+    name: 'Serie',
     data() {
         return {
             state,
@@ -39,12 +39,21 @@ export default {
 </script>
 
 <template>
+    <h3>Serie:</h3>
+    <span v-for="serie in this.state.tvSeries">
+        <ul v-if="this.state.tvSeries.length > 0">
 
-    <li>
+            <li>Il titolo è {{ serie.original_name }}</li>
+            <li>Il titolo originale {{ serie.original_name }}</li>
+            <li>
 
-        <span> La lingua originale è <img :src="this.state.serieFlag" width="20"
-                :alt="this.serie.original_language"></span>
-    </li>
+                La lingua originale è <img :src="this.state.serieFlag" width="20" :alt="this.serie.original_language">
+            </li>
+            <li>La lingua originale è {{ serie.original_language }}</li>
+            <li>Voto medio: {{ serie.vote_average }}</li>
+        </ul>
+    </span>
+
 
 </template>
 
