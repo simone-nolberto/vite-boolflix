@@ -2,6 +2,7 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const state = reactive({
+    userInput: '',
     films: [],
     tvSeries: [],
     apiFilmUrl: 'https://api.themoviedb.org/3/search/movie?api_key=5abe208d1972a179b672737b5489a0cb&query=',

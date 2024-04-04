@@ -6,14 +6,22 @@ export default {
     data() {
         return {
             state,
-            userInput: '',
+        
         }
     },
     methods: {
 
         findFilm() {
             // console.log(this.state.apiUrl + this.userInput );
-            this.state.getFilm(this.state.apiFilmUrl + this.userInput)
+            if (this.state.films.length === 0) {
+                this.state.getFilm(this.state.apiFilmUrl + this.state.userInput)
+
+            } else if (this.state.films.length > 0) {
+                this.state.films = 0,
+                // this.userInput = ''
+                this.state.getFilm(this.state.apiFilmUrl + this.state.userInput)
+
+            }
         },
 
         findSeries() {
@@ -28,7 +36,7 @@ export default {
 
     <img src="" alt="">
 
-    <input type="text" name="" id="" v-model="userInput">
+    <input type="text" name="" id="" v-model="this.state.userInput">
     <button @click="findFilm(); findSeries()">Cerca</button>
 
 </template>
