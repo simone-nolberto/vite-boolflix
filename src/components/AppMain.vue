@@ -26,7 +26,7 @@ export default {
 <template>
     <main>
         <p class="welcome" v-if="this.state.films.length === 0  && this.state.tvSeries.length === 0">
-            Benvenuto nel nostro catalogo! Inizia subito a guardare qualcosa, cerca un titolo e mettiti comodo!
+            Benvenuto nel nostro catalogo! Inizia subito a guardare qualcosa, ti basta scrivere qualcosa nella barra in alto!
         </p>
         <div class="container" v-else>
 

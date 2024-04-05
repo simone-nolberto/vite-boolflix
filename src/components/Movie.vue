@@ -81,7 +81,7 @@ export default {
                     <li>Lingua originale: <img :src="this.movieFlag" width="20" :alt="this.film.original_language">
                     </li>
                     <li>
-                        Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i>
+                        Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star stars-vote"></i>
                     </li>
                     <li>Sinossi: {{ film.overview }}</li>
                 </ul>

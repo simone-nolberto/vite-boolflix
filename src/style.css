@@ -12,6 +12,11 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: black;
+
+    & input{
+        width: 200px;
+
+    }
 }
 
 .logo {
@@ -71,6 +76,10 @@ main {
         position: absolute;
         width: 340px;
 
+    }
+
+    .stars-vote{
+        color: yellow;
     }
 }
 

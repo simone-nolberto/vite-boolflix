@@ -48,8 +48,8 @@ export default {
 
         <div class="searchBar">
 
-            <input @keyup="findFilm(); findSeries();" type="text" name="" id="" v-model="this.state.userInput">
-            <button @click="">Cerca</button>
+            <input @keyup="findFilm(); findSeries();" type="text" name="" id="" v-model="this.state.userInput" placeholder="Cosa vuoi vedere oggi?">
+            <!-- <button @click="">Cerca</button> -->
         </div>
     </header>
 
