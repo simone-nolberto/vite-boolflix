@@ -11,6 +11,11 @@ header {
     justify-content: space-between;
 }
 
+.logo {
+    color: red;
+}
+
+
 main {
     padding: 1.5rem;
 }

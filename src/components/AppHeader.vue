@@ -43,14 +43,13 @@ export default {
 <template>
     <header>
         <div class="logo">
-
             <h1>BOOLFLIX</h1>
         </div>
 
         <div class="searchBar">
 
-            <input type="text" name="" id="" v-model="this.state.userInput">
-            <button @click="findFilm(); findSeries();">Cerca</button>
+            <input @keyup="findFilm(); findSeries();" type="text" name="" id="" v-model="this.state.userInput">
+            <button @click="">Cerca</button>
         </div>
     </header>
 

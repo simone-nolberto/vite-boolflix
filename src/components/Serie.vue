@@ -7,6 +7,7 @@ export default {
         return {
             state,
             imgLink: '',
+            serieFlag: '',
             vote: 0,
         }
     },
@@ -16,10 +17,20 @@ export default {
         findSerieLanguage() {
             if (this.serie.original_language === 'en') {
                 this.serieFlag = 'https://flagcdn.com/w20/gb.png';
-                // console.log(this.flag);
+                // console.log(this.serieFlag);
+
             } else if (this.serie.original_language === 'ja') {
 
                 this.serieFlag = 'https://flagcdn.com/w20/jp.png';
+
+            } else if (this.serie.original_language === 'zh') {
+                this.serieFlag = 'https://flagcdn.com/w20/cn.png';
+                // console.log(this.serieFlag);
+
+            } else if (this.serie.original_language === 'ko') {
+                this.serieFlag = 'https://flagcdn.com/w20/kr.png';
+                // console.log(this.serieFlag);
+
             }
 
             else {
@@ -61,14 +72,14 @@ export default {
                 <img :src="imgLink" alt="">
             </div>
             <div class="card-body" v-if="this.state.tvSeries.length > 0">
-
+                <h3>Tv</h3>
                 <ul>
                     <li>Titolo: {{ serie.original_name }}</li>
                     <li>Titolo originale: {{ serie.original_name }}</li>
-                    <li>Lingua originale: <img :src="this.state.serieFlag" width="20"
-                            :alt="this.serie.original_language">
+                    <li>Lingua originale: <img :src="this.serieFlag" width="20" :alt="this.serie.original_language">
                     </li>
-                    <li><i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i></li>
+                    <!-- <li>Lingua originale: {{ this.serieFlag }}</li> -->
+                    <li>Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i></li>
                 </ul>
 
             </div>

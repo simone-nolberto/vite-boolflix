@@ -7,6 +7,7 @@ export default {
         return {
             state,
             imgLink: '',
+            movieFlag: '',
             vote: 0,
         }
     },
@@ -16,17 +17,27 @@ export default {
         findFilmLanguage() {
 
             if (this.film.original_language === 'en') {
-                this.state.movieFlag = 'https://flagcdn.com/w20/gb.png';
-                // console.log(this.flag);
-            } else if (this.film.original_language === 'ja')
-                this.state.movieFlag = 'https://flagcdn.com/w20/jp.png';
+                this.movieFlag = 'https://flagcdn.com/w20/gb.png';
+                // console.log(this.movieFlag);
 
+            } else if (this.film.original_language === 'ja') {
+                this.movieFlag = 'https://flagcdn.com/w20/jp.png';
+                // console.log(this.movieFlag);
+
+            } else if (this.film.original_language === 'zh') {
+                this.movieFlag = 'https://flagcdn.com/w20/cn.png';
+                // console.log(this.movieFlag);
+
+            } else if (this.film.original_language === 'ko'){
+                this.filmFlag = 'https://flagcdn.com/w20/kr.png';
+                // console.log(this.serieFlag);
+            }
             else {
-                this.state.movieFlag = `https://flagcdn.com/w20/${this.film.original_language}.png`;
-                // console.log(this.film.original_language)
+                this.movieFlag = `https://flagcdn.com/w20/${this.film.original_language}.png`;
+
             }
 
-            // console.log(this.flag)
+
         },
 
         findFilmImg() {
@@ -35,15 +46,8 @@ export default {
         },
 
         setVote(n) {
-            // console.log(parseFloat(this.film.vote_average).toFixed(1));
-            // console.log(Math.round(this.film.vote_average));
-            // console.log(Math.round(this.film.vote_average/2));
 
             this.vote = n;
-
-
-            // this.votes.push(Math.round(this.film.vote_average / 2))
-            // console.log(this.votes);
 
         }
 
@@ -69,21 +73,22 @@ export default {
 
             </div>
             <div class="card-body" v-if="this.state.films.length > 0">
-                <ul >
+                <h3>Cinema</h3>
+                <ul>
                     <li>Titolo: {{ film.title }}</li>
                     <li>Titolo originale: {{ film.original_title }}</li>
-                    <li>Lingua originale: <img :src="this.state.movieFlag" width="20"
-                            :alt="this.film.original_language">
+                    <!-- <li>Lingua originale: {{ this.movieFlag }}</li> -->
+                    <li>Lingua originale: <img :src="this.movieFlag" width="20" :alt="this.film.original_language">
                     </li>
                     <li>
-                        <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i>
+                        Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-        
-    
+
+
 
 
 

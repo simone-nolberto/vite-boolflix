@@ -25,19 +25,19 @@ export default {
 
 <template>
     <main>
-        <div class="container">
-            <h3>Film:</h3>
+        <p v-if="this.state.films.length === 0  && this.state.tvSeries.length === 0">
+            Inizia subito a guardare qualcosa, cerca un titolo dal nostro catalogo!
+        </p>
+        <div class="container" v-else>
+
             <div class="row" v-if="this.state.films.length > 0">
 
-                
                 <Movie v-for="film in this.state.films" :film='film'></Movie>
 
-
             </div>
-            <h3>Serie:</h3>
+
             <div class="row" v-if="this.state.tvSeries.length > 0">
 
-                
                 <Serie v-for="serie in this.state.tvSeries" :serie="serie"></Serie>
 
             </div>
