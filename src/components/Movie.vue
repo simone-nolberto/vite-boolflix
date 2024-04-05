@@ -84,6 +84,7 @@ export default {
                     <li>
                         Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i>
                     </li>
+                    <li>Sinossi: {{ film.overview }}</li>
                 </ul>
             </div>
         </div>

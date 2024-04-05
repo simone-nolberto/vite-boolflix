@@ -72,7 +72,7 @@ export default {
                 <img :src="imgLink" alt="">
             </div>
             <div class="card-body" v-if="this.state.tvSeries.length > 0">
-                <h3>Tv</h3>
+                <h3>Show</h3>
                 <ul>
                     <li>Titolo: {{ serie.original_name }}</li>
                     <li>Titolo originale: {{ serie.original_name }}</li>
@@ -80,6 +80,7 @@ export default {
                     </li>
                     <!-- <li>Lingua originale: {{ this.serieFlag }}</li> -->
                     <li>Voto: <i v-for="n in this.vote" :key="'filled-' + n" class="fa-solid fa-star"></i></li>
+                    <li>Sinossi: {{ serie.overview }}</li>
                 </ul>
 
             </div>

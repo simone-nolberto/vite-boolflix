@@ -43,7 +43,7 @@ export default {
 <template>
     <header>
         <div class="logo">
-            <h1>BOOLFLIX</h1>
+            <h1>BoolFlix</h1>
         </div>
 
         <div class="searchBar">

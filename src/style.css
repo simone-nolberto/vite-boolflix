@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 
@@ -9,6 +11,7 @@ header {
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
+    background-color: black;
 }
 
 .logo {
@@ -17,7 +20,10 @@ header {
 
 
 main {
+    height: calc(100vh - 84px);
     padding: 1.5rem;
+    background-color: gray;
+    overflow: auto;
 }
 
 
@@ -42,23 +48,25 @@ main {
     padding-bottom: 5rem;
 }
 
-.card{
+.card {
     width: 350px;
     position: relative;
     height: 450px;
 
-    .card-img{
+    .card-img {
         position: absolute;
         z-index: 1;
-        
+
     }
 
-    .card-body{
+    .card-body {
         position: absolute;
+        width: 340px;
+
     }
 }
 
-.card:hover .card-img{
+.card:hover .card-img {
     display: none;
 }
 
