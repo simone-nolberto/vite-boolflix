@@ -56,11 +56,15 @@ main {
     width: 350px;
     position: relative;
     height: 450px;
+   
 
     .card-img {
         position: absolute;
         z-index: 1;
-
+        
+        & > img{
+            max-width: 342px;
+        }
     }
 
     .card-body {

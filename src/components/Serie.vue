@@ -69,7 +69,8 @@ export default {
     <div class="col">
         <div class="card">
             <div class="card-img">
-                <img :src="imgLink" alt="">
+                <img v-if="this.serie.poster_path !== null" :src="imgLink" alt="">
+                <img v-else src="../assets/img/divano.jpeg" alt="">
             </div>
             <div class="card-body" v-if="this.state.tvSeries.length > 0">
                 <h3>Show</h3>

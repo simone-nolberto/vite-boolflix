@@ -42,13 +42,7 @@ export default {
         },
 
         findFilmImg() {
-            console.log(this.film.poster_path);
-            if (this.film.poster_path !== null) {
-                this.imgLink = `https://image.tmdb.org/t/p/w342/${this.film.poster_path}`
-
-            } else {
-                this.imgLink = "../assets/img/sala.jpg"
-            }
+            this.imgLink = `https://image.tmdb.org/t/p/w342/${this.film.poster_path}`
         },
 
         setVote(n) {
@@ -75,8 +69,8 @@ export default {
     <div class="col">
         <div class="card">
             <div class="card-img">
-                <img :src="this.imgLink" alt="">
-                
+                <img v-if="this.film.poster_path !== null" :src="this.imgLink" alt="">
+                <img v-else src="../assets/img/sala.jpg" alt="">
             </div>
             <div class="card-body" v-if="this.state.films.length > 0">
                 <h3>Cinema</h3>
