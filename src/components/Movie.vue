@@ -9,6 +9,7 @@ export default {
             imgLink: '',
             movieFlag: '',
             vote: 0,
+            visible: true,
         }
     },
     props: ['film'],
@@ -49,7 +50,7 @@ export default {
 
             this.vote = n;
 
-        }
+        },
 
 
     },
@@ -68,7 +69,7 @@ export default {
 
     <div class="col">
         <div class="card">
-            <div class="card-img">
+            <div class="card-img" >
                 <img :src="this.imgLink" alt="">
 
             </div>

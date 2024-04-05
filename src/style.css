@@ -42,6 +42,28 @@ main {
     padding-bottom: 5rem;
 }
 
+.card{
+    width: 350px;
+    position: relative;
+    height: 450px;
+
+    .card-img{
+        position: absolute;
+        z-index: 1;
+        
+    }
+
+    .card-body{
+        position: absolute;
+    }
+}
+
+.card:hover .card-img{
+    display: none;
+}
+
+
+
 & ul {
     list-style: none;
 }
