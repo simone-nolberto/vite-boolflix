@@ -24,6 +24,10 @@ main {
     padding: 1.5rem;
     background-color: gray;
     overflow: auto;
+
+    .welcome{
+        text-align: center;
+    }
 }
 
 
