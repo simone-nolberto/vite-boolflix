@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             state,
-            imgLink: 'https://image.tmdb.org/t/p/ '
+
         }
     },
     components: {
@@ -18,6 +18,11 @@ export default {
     },
     methods: {
 
+        changeCheck() {
+            if (this.state.films.length && this.state.tvSeries.length === 0) {
+                this.state.check = false;
+            }
+        }
     },
 
 }
@@ -25,10 +30,13 @@ export default {
 
 <template>
     <main>
-        <p class="welcome" v-if="this.state.films.length === 0  && this.state.tvSeries.length === 0">
-            Benvenuto nel nostro catalogo! Inizia subito a guardare qualcosa, ti basta scrivere qualcosa nella barra in alto!
+        <p class="welcome" v-if="this.state.films.length === 0 && this.state.tvSeries.length === 0">
+            Benvenuto nel nostro catalogo! Inizia subito a guardare qualcosa, ti basta scrivere qualcosa nella barra in
+            alto!
         </p>
-        <div class="container" v-else>
+
+
+        <div class="container" v-else-if="this.state.films.length !== 0 && this.state.tvSeries.length !== 0">
 
             <div class="row" v-if="this.state.films.length > 0">
 
@@ -44,6 +52,8 @@ export default {
 
         </div>
 
+        <p class="retry" v-else>Spiacenti, non abbiamo trovato quello che cerchi, prova con un altro
+            titolo</p>
     </main>
 
 </template>

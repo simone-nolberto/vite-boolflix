@@ -33,6 +33,10 @@ main {
     .welcome{
         text-align: center;
     }
+
+    .retry{
+        text-align: center;
+    }
 }
 
 
