@@ -13,7 +13,7 @@ export const state = reactive({
     getFilm(url) {
         axios.get(url)
             .then(response => {
-                console.log(response.data.results);
+                // console.log(response.data.results);
                 this.films = response.data.results;
                 // console.log(this.films);
             })
@@ -22,7 +22,7 @@ export const state = reactive({
     getSeries(url) {
         axios.get(url)
             .then(response => {
-                console.log(response.data.results);
+                // console.log(response.data.results);
                 this.tvSeries = response.data.results;
                 // console.log(this.tvSeries);
             })

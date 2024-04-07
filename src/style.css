@@ -13,7 +13,7 @@ header {
     justify-content: space-between;
     background-color: black;
 
-    & input{
+    & input {
         width: 200px;
 
     }
@@ -30,11 +30,11 @@ main {
     background-color: gray;
     overflow: auto;
 
-    .welcome{
+    .welcome {
         text-align: center;
     }
 
-    .retry{
+    .retry {
         text-align: center;
     }
 }
@@ -65,24 +65,28 @@ main {
     width: 350px;
     position: relative;
     height: 450px;
-   
+
 
     .card-img {
         position: absolute;
         z-index: 1;
-        
-        & > img{
+
+        &>img {
             max-width: 342px;
         }
     }
 
     .card-body {
+        display: none;
         position: absolute;
         width: 340px;
-
+        height: 450px;
+        background-color: black;
+        color: white;
+        padding: 0.5rem;
     }
 
-    .stars-vote{
+    .stars-vote {
         color: yellow;
     }
 }
@@ -91,6 +95,9 @@ main {
     display: none;
 }
 
+.card:hover .card-body {
+    display: inline;
+}
 
 
 & ul {

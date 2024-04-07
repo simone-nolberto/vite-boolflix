@@ -36,12 +36,12 @@ export default {
         </p>
 
 
-        <div class="container" v-else-if="this.state.films.length !== 0 && this.state.tvSeries.length !== 0">
+        <div class="container" v-else="this.state.films.length !== 0 && this.state.tvSeries.length !== 0">
 
             <div class="row" v-if="this.state.films.length > 0">
 
                 <Movie v-for="film in this.state.films" :film='film'></Movie>
-
+                
             </div>
 
             <div class="row" v-if="this.state.tvSeries.length > 0">
@@ -52,8 +52,8 @@ export default {
 
         </div>
 
-        <p class="retry" v-else>Spiacenti, non abbiamo trovato quello che cerchi, prova con un altro
-            titolo</p>
+        <!-- <p class="retry" v-else>Spiacenti, non abbiamo trovato quello che cerchi, prova con un altro
+            titolo</p> -->
     </main>
 
 </template>
