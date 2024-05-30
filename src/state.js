@@ -2,7 +2,7 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const state = reactive({
-    
+
     userInput: '',
     films: [],
     tvSeries: [],
@@ -27,9 +27,5 @@ export const state = reactive({
                 // console.log(this.tvSeries);
             })
     },
-
-
-
-
 
 })
